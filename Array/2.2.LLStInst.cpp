@@ -34,5 +34,23 @@ int main(){
         cout<<"Marks: "<<temp->marks<<endl<<endl;
         temp = temp->link;
     }
+    //Linked search traversal
+    int searchRollno;
+    cout<<"Enter Rollno to search: ";
+    cin>>searchRollno;
+    temp = head;
+    while(temp != NULL){
+        if(temp->Rollno == searchRollno){
+            cout<<"Found Rollno: "<<temp->Rollno<<endl;
+            cout<<"Name: "<<temp->name<<endl;
+            cout<<"Marks: "<<temp->marks<<endl<<endl;
+            break;
+        }
+        temp = temp->link;
+    }
+    if(temp == NULL){
+        cout<<"Rollno not found!"<<endl;
+    }
+
     return 0;
 }
