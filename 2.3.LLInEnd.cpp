@@ -1,41 +1,31 @@
 #include<iostream>
 using namespace std;
+struct node{
+    int data;
+    struct node* next;
+};
 int main(){
-    struct node
-    {
-        int data;
-        struct node* link;
-    };
-    struct node *temp, *head, *tail;
-    head = NULL;
-    tail = NULL;
+    node* head = NULL;
+    node* tail = NULL;
     int choice = 1;
-    cout<<"Inserting at the end of list"<<endl;
-    while(choice == 1)
-    {
-        temp = new node();
+    while(choice == 1){
+        node* temp = new node();
         cout<<"Enter data: ";
         cin>>temp->data;
-        temp->link = NULL;
-        if(head == NULL){
+        temp->next = NULL;
+        if(head==NULL){
             head = temp;
             tail = temp;
-        }
-        else{
-            tail->link = temp;
+        }else{
+            tail-> next=temp;
             tail = temp;
         }
-        cout<<"Continue 0/1: ";
+        cout<<"Countinue(1/0): ";
         cin>>choice;
     }
-    temp = head;
-    cout<<"The linked list is: "<<endl;
-    while(temp !=NULL){
-        cout<<temp->data<<" ";
-        temp = temp->link;
-
+    node* ptr = head;
+    while(ptr != NULL){
+        cout<<ptr->data<<" ";
+        ptr = ptr->next;
     }
-    return 0;
-
-
 }
