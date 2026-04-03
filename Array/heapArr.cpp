@@ -20,16 +20,14 @@ void insertPatient(int pid) {
     id[ptr] = pid;
 }
 
-// Fix 1: Added missing peek() function
 int peek() {
     if (n == 0) {
         cout << "Heap is empty\n";
         return -1;
     }
-    return id[1]; // Root is always the max
+    return id[1];
 }
 
-// Fix 2: Added missing deleteHeap() function
 void deleteHeap(int* item) {
     if (n == 0) {
         cout << "Heap is empty\n";
@@ -37,11 +35,10 @@ void deleteHeap(int* item) {
         return;
     }
 
-    *item = id[1];       // Save root (max element)
-    id[1] = id[n];       // Move last element to root
-    n--;                 // Reduce heap size
+    *item = id[1];
+    id[1] = id[n];
+    n--;
 
-   
     int ptr = 1;
     while (true) {
         int left  = 2 * ptr;
@@ -100,5 +97,5 @@ int main() {
             default:
                 cout << "Invalid choice\n";
         }
-    } while (choice != 5); 
+    } while (choice != 5);
 }
