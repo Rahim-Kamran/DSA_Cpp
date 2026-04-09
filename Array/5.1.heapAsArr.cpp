@@ -20,14 +20,6 @@ void insertPatient(int pid) {
     id[ptr] = pid;
 }
 
-int peek() {
-    if (n == 0) {
-        cout << "Heap is empty\n";
-        return -1;
-    }
-    return id[1];
-}
-
 void deleteHeap(int* item) {
     if (n == 0) {
         cout << "Heap is empty\n";
@@ -85,17 +77,12 @@ int main() {
                     cout << "Deleted patient ID: " << item << "\n";
                 break;
             case 3:
-                if (peek() != -1)
-                    cout << "Highest priority patient ID: " << peek() << "\n";
-                break;
-            case 4:
                 display();
                 break;
-            case 5:
+            case 4:
                 cout << "Exiting...\n";
                 break;
             default:
                 cout << "Invalid choice\n";
         }
-    } while (choice != 5);
-}
+    } while (choice != 4);2}
